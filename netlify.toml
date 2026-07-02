@@ -1,0 +1,19 @@
+# Vakwerk Online — Netlify-configuratie
+
+# Previews nooit indexeren (dubbele borging naast meta-tag en robots.txt)
+[[headers]]
+  for = "/preview/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# Nette URL's: /preview/slug werkt zonder .html
+[[redirects]]
+  from = "/preview/:slug"
+  to = "/preview/:slug.html"
+  status = 200
+
+# Template niet publiek serveren
+[[redirects]]
+  from = "/preview/_template*"
+  to = "/404.html"
+  status = 404

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BELANGRIJK: previews nooit laten indexeren -->
+<meta name="robots" content="noindex, nofollow">
+<title>Schildersbedrijf Van Dijk — voorbeeldwebsite | Vakwerk Online</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   PREVIEW-TEMPLATE — Vakwerk Online
+   Vervang per prospect:  [BEDRIJF]  [PLAATS]  [RATING]  [REVIEWS]
+   [TELEFOON]  [WHATSAPP-NR]  [VERVALDATUM]  + diensten & reviewquotes
+   ===================================================================== */
+:root{
+  --navy:#1B3A4B; --navy-d:#12293a;
+  --geel:#F0A32A; --geel-d:#d68c15;
+  --wa:#1EBE5D; --wa-d:#169c4b;
+  --cream:#F7F4F0; --ink:#22303a; --grijs:#6b7680; --lijn:#e4dfd7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px;
+     /* ruimte voor de vaste claim-balk */
+     padding-bottom:96px}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;line-height:1.06;color:var(--navy)}
+a{color:var(--navy)}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+.eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--geel-d)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;padding:14px 22px;border-radius:8px}
+.btn:focus-visible{outline:3px solid var(--geel);outline-offset:2px}
+.btn-bel{background:var(--geel);color:var(--navy-d)}
+.btn-wa{background:var(--wa);color:#fff}
+
+/* ---------- concept-lint ---------- */
+.lint{background:var(--geel);color:var(--navy-d);font-size:13.5px;font-weight:600;text-align:center;padding:8px 14px}
+.lint b{text-transform:uppercase;letter-spacing:.06em}
+
+/* ---------- site: hero ---------- */
+.hero{background:linear-gradient(180deg,var(--navy),var(--navy-d));color:#fff;padding:60px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.hero h1{color:#fff;font-size:clamp(38px,6vw,58px);font-weight:800;margin:10px 0 12px}
+.hero .plaats{color:var(--geel);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.04em;text-transform:uppercase}
+.hero p{color:#c9d6e0;font-size:19px;max-width:44ch;margin-bottom:24px}
+.ratingband{display:inline-flex;align-items:center;gap:10px;background:#ffffff14;border:1px solid #ffffff2b;border-radius:999px;padding:8px 18px;margin-bottom:20px}
+.sterren{color:#F5B301;letter-spacing:2px}
+.ratingband b{color:#fff}
+.ratingband span{color:#9db1c0;font-size:14px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-beeld{background:#0e2233;border:1px solid #ffffff1f;border-radius:14px;aspect-ratio:4/4.4;display:flex;align-items:center;justify-content:center;color:#7d93a5;font-size:13.5px;text-align:center;padding:22px}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.hero-beeld{aspect-ratio:16/9}}
+
+section{padding:64px 0}
+section h2{font-size:clamp(30px,4vw,40px);font-weight:800;margin:8px 0 26px}
+.zebra{background:var(--cream)}
+
+/* diensten */
+.diensten{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.dienst{background:#fff;border:1px solid var(--lijn);border-radius:12px;padding:24px 22px}
+.zebra .dienst{box-shadow:0 6px 18px rgba(27,58,75,.06)}
+.dienst h3{font-size:22px;margin-bottom:6px}
+.dienst p{font-size:15px;color:var(--grijs)}
+@media(max-width:760px){.diensten{grid-template-columns:1fr}}
+
+/* werkgebied */
+.gebied{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.plek{background:#fff;border:1.5px solid var(--lijn);border-radius:999px;padding:8px 18px;font-weight:600;font-size:15px;color:var(--navy)}
+.plek.hoofd{border-color:var(--geel);background:#fdf4e3}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review{background:#fff;border:1px solid var(--lijn);border-radius:12px;padding:22px}
+.review .sterren{font-size:15px}
+.review p{font-size:15px;margin:10px 0 12px;color:var(--ink)}
+.review b{font-size:14px;color:var(--grijs);font-weight:600}
+.review-voet{margin-top:20px;font-size:14.5px;color:var(--grijs)}
+.review-voet a{color:var(--geel-d);font-weight:600}
+@media(max-width:760px){.reviews{grid-template-columns:1fr}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.contact .kaart{background:var(--navy);border-radius:14px;color:#fff;padding:34px 30px}
+.contact .kaart h3{color:#fff;font-size:26px;margin-bottom:10px}
+.contact .kaart p{color:#c9d6e0;font-size:15.5px;margin-bottom:20px}
+.contact .kaart .btn{width:100%;margin-bottom:10px}
+.contact ul{list-style:none}
+.contact li{padding:10px 0;border-bottom:1px dashed var(--lijn);font-size:15.5px}
+.contact li b{color:var(--navy)}
+@media(max-width:760px){.contact{grid-template-columns:1fr}}
+
+/* site-footer */
+.site-voet{background:var(--navy-d);color:#9db1c0;font-size:13px;padding:26px 0;text-align:center}
+
+/* =====================================================================
+   DE CLAIM-BALK — dit is de verkoper. Vast onderin, altijd zichtbaar.
+   ===================================================================== */
+.claim{position:fixed;left:0;right:0;bottom:0;z-index:100;background:var(--navy-d);border-top:3px solid var(--geel);box-shadow:0 -10px 34px rgba(0,0,0,.28)}
+.claim .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 22px;max-width:1080px}
+.claim .tekst{color:#fff;min-width:0}
+.claim .tekst b{font-family:'Barlow Condensed',sans-serif;font-size:19px;letter-spacing:.02em;display:block;line-height:1.2}
+.claim .tekst span{font-size:13px;color:#c9d6e0;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.claim .tekst .deadline{color:var(--geel);font-weight:700}
+.claim .btn{white-space:nowrap;padding:13px 22px;box-shadow:0 4px 14px rgba(30,190,93,.4)}
+@media(max-width:640px){
+  .claim .wrap{flex-direction:column;gap:8px;align-items:stretch;text-align:center;padding:10px 16px}
+  .claim .tekst span{white-space:normal}
+  body{padding-bottom:132px}
+}
+@media(prefers-reduced-motion:no-preference){
+  .claim{animation:opkomen .5s ease .8s both}
+  @keyframes opkomen{from{transform:translateY(100%)}to{transform:translateY(0)}}
+}
+</style>
+</head>
+<body>
+
+<!-- Concept-lint: verplicht op elke preview -->
+<div class="lint"><b>Conceptvoorbeeld</b> — gemaakt door Vakwerk Online (Agile Advisory). Deze pagina is nog niet officieel verbonden aan het genoemde bedrijf.</div>
+
+<!-- ================= DE WEBSITE VAN DE PROSPECT ================= -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="plaats">Rhoon · Rotterdam e.o.</span><!-- [PLAATS] -->
+      <h1>Schildersbedrijf Van Dijk</h1><!-- [BEDRIJF] -->
+      <div class="ratingband"><span class="sterren">★★★★★</span> <b>4,9</b> <span>· 32 Google-reviews</span></div><!-- [RATING] [REVIEWS] -->
+      <p>Strak schilderwerk binnen en buiten, houtrotherstel en advies dat u geld bespaart. Al 14 jaar het vaste adres voor woningen in Rhoon en omgeving.</p>
+      <div class="cta">
+        <a class="btn btn-bel" href="tel:+31600000000">📞 Bel direct</a><!-- [TELEFOON] -->
+        <a class="btn btn-wa" href="https://wa.me/31600000000?text=Hoi%2C%20ik%20wil%20graag%20een%20offerte%20voor%20schilderwerk.">WhatsApp een foto</a>
+      </div>
+    </div>
+    <div class="hero-beeld">[ Uniek AI-beeld: klusbus met logo van het bedrijf — hero-plek ]</div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Wat wij doen</span>
+    <h2>Vakwerk waar u jaren plezier van heeft</h2>
+    <div class="diensten">
+      <div class="dienst"><h3>Buitenschilderwerk</h3><p>Kozijnen, gevels en deuren. Grondig voorbereid, netjes afgewerkt — bestand tegen het Hollandse weer.</p></div>
+      <div class="dienst"><h3>Binnenschilderwerk</h3><p>Wanden, plafonds, trappen en deuren. Stofarm werken, meubels afgedekt, bezem erdoor bij vertrek.</p></div>
+      <div class="dienst"><h3>Houtrotherstel</h3><p>Aangetast hout vakkundig hersteld vóórdat het een kostbaar probleem wordt. Advies is altijd eerlijk: herstellen als het kan, vervangen als het moet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="zebra">
+  <div class="wrap">
+    <span class="eyebrow">Werkgebied</span>
+    <h2>Wij werken in uw buurt</h2>
+    <div class="gebied">
+      <span class="plek hoofd">Rhoon</span>
+      <span class="plek">Barendrecht</span>
+      <span class="plek">Poortugaal</span>
+      <span class="plek">Hoogvliet</span>
+      <span class="plek">Rotterdam-Zuid</span>
+      <span class="plek">Ridderkerk</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Wat klanten zeggen</span>
+    <h2>4,9 uit 32 Google-reviews</h2>
+    <div class="reviews">
+      <div class="review"><span class="sterren">★★★★★</span><p>"Keurig gewerkt, alles netjes achtergelaten en het resultaat is prachtig. Kozijnen zien er weer als nieuw uit."</p><b>— Huiseigenaar, Rhoon</b></div>
+      <div class="review"><span class="sterren">★★★★★</span><p>"Eerlijk advies over wat wél en niet nodig was. Dat zie je niet vaak. Afspraak is afspraak."</p><b>— Klant, Barendrecht</b></div>
+      <div class="review"><span class="sterren">★★★★★</span><p>"Snel gereageerd op mijn appje, week later stond hij op de stoep. Topkwaliteit."</p><b>— Klant, Poortugaal</b></div>
+    </div>
+    <p class="review-voet">Dit zijn voorbeeldteksten — op uw echte website tonen we <a href="#">uw eigen Google-reviews</a>, live gekoppeld aan uw profiel.</p>
+  </div>
+</section>
+
+<section class="zebra">
+  <div class="wrap contact">
+    <div class="kaart">
+      <h3>Offerte binnen 24 uur</h3>
+      <p>Stuur een foto van de klus via WhatsApp — u ontvangt binnen één werkdag een eerlijke prijsindicatie. Bellen mag natuurlijk ook.</p>
+      <a class="btn btn-wa" href="https://wa.me/31600000000?text=Hoi%2C%20hierbij%20een%20foto%20van%20de%20klus.">WhatsApp een foto van de klus</a>
+      <a class="btn btn-bel" href="tel:+31600000000">📞 06 00 00 00 00</a>
+    </div>
+    <ul>
+      <li><b>Werktijden</b> — ma t/m vr, 07.00–17.00</li>
+      <li><b>Reactietijd</b> — binnen 24 uur antwoord</li>
+      <li><b>Offerte</b> — altijd gratis en vrijblijvend</li>
+      <li><b>Route</b> — <a href="https://www.google.com/maps">via Google Maps</a></li>
+    </ul>
+  </div>
+</section>
+
+<div class="site-voet">Schildersbedrijf Van Dijk · Rhoon · KvK [nummer] — website door Vakwerk Online</div>
+
+<!-- ================= DE CLAIM-BALK ================= -->
+<div class="claim" role="complementary" aria-label="Deze website claimen">
+  <div class="wrap">
+    <div class="tekst">
+      <b>Deze website staat klaar voor Schildersbedrijf Van Dijk.</b><!-- [BEDRIJF] -->
+      <span>€895 eenmalig · €69/mnd · domein op úw naam · live binnen 48 uur · <span class="deadline">preview online t/m 16 juli</span></span><!-- [VERVALDATUM] -->
+    </div>
+    <a class="btn btn-wa" href="https://wa.me/31626562186?text=Ja%20Marc%2C%20ik%20wil%20de%20website%20voor%20Schildersbedrijf%20Van%20Dijk.">Ja, ik wil hem</a><!-- voorgevuld met [BEDRIJF] -->
+  </div>
+</div>
+
+</body>
+</html>
